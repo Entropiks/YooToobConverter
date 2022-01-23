@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import './App.css';
 
 function App() {
 
@@ -31,10 +32,14 @@ function App() {
   }
 
   return (
-    <div>
-      <input onPaste={handleInput} type='text' placeholder="Enter youtube URL" />
-      <button onClick={fetchHtml}>Fetch</button>
-      <button>Get Video ID</button>
+    <div className="wrapper">
+      
+      <div className="controls">
+      <h1>Converter</h1>
+        <input onPaste={handleInput} type='text' placeholder="Enter youtube URL" />
+        
+        <button onClick={fetchHtml}>Fetch</button>
+      </div>
 
     </div>
   );
