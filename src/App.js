@@ -6,9 +6,22 @@ function App() {
   const [videoId, setVideoId] = useState('');
   const [readyUrl, setReadyUrl] = useState('');
 
+  // Handle the video url input
+  function handleInput(e) {
+    let value = e.clipboardData.getData('Text');
+    // Slice the ID off the URL and set it into 'videoId' for use in the fetch request
+    let slicedUrl = value.slice(-11);
+    setVideoId(slicedUrl);
+    console.log("Full Url: " + value);
+  }
+
+  console.log("Video ID: " + videoId);
+  console.log('https://www.yt-download.org/api/button/mp3/' + videoId);
+
   // Send the request to the server
   function fetchHtml() {
-    fetch('https://www.yt-download.org/api/button/mp3/5f3YgB5yb2I')
+    // fetch('https://www.yt-download.org/api/button/mp3/5f3YgB5yb2I')
+    fetch('https://www.yt-download.org/api/button/mp3/' + videoId)
     .then((response) => {
       return response.text();
     })
@@ -17,24 +30,11 @@ function App() {
     });
   }
 
-  // Handle the video url input
-  function handleInput(e) {
-    let slicedUrl = url.slice(-9);
-    console.log(slicedUrl);
-    setUrl(e.target.value);
-    
-  }
-
-  
-  const getVideoId = () => {
-    
-  }
-
   return (
     <div>
-      <input onChange={handleInput} type='text' placeholder="Enter youtube URL" />
+      <input onPaste={handleInput} type='text' placeholder="Enter youtube URL" />
       <button onClick={fetchHtml}>Fetch</button>
-      <button onClick={getVideoId}>Get Video ID</button>
+      <button>Get Video ID</button>
 
     </div>
   );
