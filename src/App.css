@@ -3,12 +3,14 @@
   margin: 0;
 }
 .wrapper {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: gray;
+  position: relative;
+  background-color: #0000004d;
+  min-width: 350px;
+  min-height: 350px;
+  max-width: 500px;
+  padding: 25px;
+  border-radius: 3px;
+  margin: 25px;
 }
 
 .controls {
@@ -16,4 +18,68 @@
   height: 100%;
   flex-direction: column;
   justify-content: center;
+}
+
+#youtube-url {
+  border: none;
+  border-radius: 3px;
+  padding: 13px;
+  margin: 15px 0px 10px 0px;
+}
+
+#youtube-url:focus-visible {
+  /* outline: 4px solid darkorange; */
+  outline: 2px solid linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  /* background-size: 400% 400%; */
+}
+
+#disclaimer {
+  position: absolute;
+  bottom: 0;
+  font-size: 12px;
+  margin: 15px 0px;
+}
+#btn-convert {
+  padding: 10px;
+  max-width: 45%;
+  color: white;
+  /* border: 1px solid #0000007a; */
+  border-radius: 3px;
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+  background: linear-gradient(-45deg, #a5e7e9, #f3b069, #db98fc, #c7f3e9);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+  border: none;
+  transition: 0.3s;
+  opacity: .7;
+  
+}
+#btn-convert:hover {
+  background: linear-gradient(-45deg, #a5e7e9, #f3b069, #db98fc, #c7f3e9);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+  opacity: 1;
+}
+
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }

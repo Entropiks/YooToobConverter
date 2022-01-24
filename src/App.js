@@ -32,16 +32,17 @@ function App() {
   }
 
   return (
-    <div className="wrapper">
-      
-      <div className="controls">
-      <h1>Converter</h1>
-        <input onPaste={handleInput} type='text' placeholder="Enter youtube URL" />
-        
-        <button onClick={fetchHtml}>Fetch</button>
+    
+      <div className="wrapper">
+        <div className="controls">
+          <h1>Youtube Video Converter</h1>
+          <p>Welcome to my video converter, simply paste in a youtube URL and we will give you back a download link! Simple as that.</p>
+          <input id="youtube-url" onPaste={handleInput} type='text' placeholder="Enter youtube URL" />  
+          <button id="btn-convert" onClick={fetchHtml}>Convert to MP3</button>
+        </div>
+        <p id="disclaimer">Please note this was built for research purposes only.</p>
       </div>
-
-    </div>
+   
   );
 }
 
