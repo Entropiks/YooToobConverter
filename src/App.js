@@ -16,29 +16,22 @@ function App() {
     console.log("Full Url: " + value);
   }
 
-  // Handle the input when someone chooses from the suggested dropdown which happens via cookies.
-  // function handleChange(e) {
-  //   setUrl(e.target.value);
-  //   console.log(e.target.value);
-  // }
+  // function emptyStringTest() {}
 
   console.log("Video ID: " + videoId);
   console.log('https://www.yt-download.org/api/button/mp3/' + videoId);
 
-  // Send the request to the server
   function fetchHtml() {
-    // fetch('https://www.yt-download.org/api/button/mp3/5f3YgB5yb2I')
     fetch('https://www.yt-download.org/api/button/mp3/' + videoId)
     .then((response) => {
       return response.text();
     })
     .then((html) => {
-      document.body.innerHTML = html;
+      document.getElementById('downloadSection').innerHTML = html;
+      // After load, lets strip the nasty css that is provided
+      document.querySelector('link[href$="style.css"]').remove()
     });
-
   }
-
-  
 
   return (
     
@@ -48,7 +41,8 @@ function App() {
           <p>Welcome to my video converter, simply paste in a youtube URL and we will give you back a download link! Simple as that. There are also no length limits so go bananas.</p>
           <input id="youtube-url" onPaste={handleInput} type='text' placeholder="Enter youtube URL" autoComplete="off"/>  
           <button id="btn-convert" onClick={fetchHtml}>Convert to MP3</button>
-          
+          <section id="downloadSection">
+          </section>
         <p id="disclaimer">Please note this was built for research purposes only.</p>
       </div>
     </div>
