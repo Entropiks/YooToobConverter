@@ -7,7 +7,7 @@
   position: relative;
   background-color: #0000004d;
   min-width: 350px;
-  min-height: 350px;
+  min-height: 400px;
   max-width: 500px;
   padding: 25px;
   border-radius: 3px;
@@ -30,6 +30,11 @@
 
 #downloadSection {
   margin-top: 15px;
+}
+
+#nav a {
+  text-decoration: none;
+  color: black;
 }
 
 .download a {

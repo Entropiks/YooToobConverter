@@ -37,8 +37,8 @@ function App() {
     
       <div className="wrapper">
         <div className="controls">
-          <h1>Youtube Video Converter</h1>
-          <p>Welcome to my video converter, simply paste in a youtube URL and we will give you back a download link! Simple as that. There are also no length limits so go bananas.</p>
+          <h1 id="nav"><a href="">Youtube Video Converter</a></h1>
+          <p style={{marginTop: 15, marginBottom: 15}}>Welcome to my video converter, simply paste in a youtube URL and we will give you back a download link! Simple as that. There are also no length limits so go bananas.</p>
           <input id="youtube-url" onPaste={handleInput} type='text' placeholder="Enter youtube URL" autoComplete="off"/>  
           <button id="btn-convert" onClick={fetchHtml}>Convert to MP3</button>
           <section id="downloadSection">
