@@ -16,10 +16,8 @@ function App() {
     console.log("Full Url: " + value);
   }
 
-  // function emptyStringTest() {}
-
-  console.log("Video ID: " + videoId);
-  console.log('https://www.yt-download.org/api/button/mp3/' + videoId);
+  // console.log("Video ID: " + videoId);
+  // console.log('https://www.yt-download.org/api/button/mp3/' + videoId);
 
   function fetchHtml() {
     fetch('https://www.yt-download.org/api/button/mp3/' + videoId)
@@ -33,19 +31,27 @@ function App() {
     });
   }
 
+  function handleReset() {
+    window.location.reload();
+  }
+
   return (
     
       <div className="wrapper">
         <div className="controls">
-          <h1 id="nav"><a href="">Youtube Video Converter</a></h1>
+          <h1 id="nav"><a href="">Youtube to MP3/MP4 Converter</a></h1>
           <p style={{marginTop: 15, marginBottom: 15}}>Welcome to my video converter, simply paste in a youtube URL and we will give you back a download link! Simple as that. There are also no length limits so go bananas.</p>
-          <input id="youtube-url" onPaste={handleInput} type='text' placeholder="Enter youtube URL" autoComplete="off"/>  
-          <button id="btn-convert" onClick={fetchHtml}>Convert to MP3</button>
+          <input id="youtube-url" onPaste={handleInput} type='text' placeholder="Enter youtube URL"/> 
+          <div id="action-bar">
+            <button id="btn-convert" onClick={fetchHtml} style={{width: 175}}>Convert to MP3</button> 
+            <button id="btn-convert" onClick={handleReset} style={{width: 75}}>Reset</button> 
+          </div> 
           <section id="downloadSection">
           </section>
-        <p id="disclaimer">Please note this was built for research purposes only.</p>
+          <p id="disclaimer">Please note this was built for research purposes only.</p>   
+        </div>
+        
       </div>
-    </div>
    
   );
 }

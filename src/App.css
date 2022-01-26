@@ -3,12 +3,13 @@
   margin: 0;
   font-family: 'Open Sans', sans-serif;
 }
+
 .wrapper {
   display: flex;
   background-color: #0000004d;
   border-radius: 3px;
   margin: 25px;
-  height: 485px;
+  /* height: 485px; */
   max-width: 500px;
   padding: 25px;
   position: relative;
@@ -27,13 +28,16 @@
   margin: 15px 0px 10px 0px;
 }
 
-#downloadSection {
-  margin-top: 15px;
+#action-bar {
+  display: flex;
+    justify-content: space-between;
 }
 
 #nav a {
   text-decoration: none;
   color: black;
+  font-family: 'Staatliches', cursive;
+  font-weight: 300;
 }
 
 .download a {
@@ -61,17 +65,15 @@
 }
 
 #disclaimer {
-  position: absolute;
-  bottom: 0;
+  padding-top: 20px;
   font-size: 12px;
-  margin: 15px 0px;
+  font-weight: 700;
 }
 #btn-convert {
   cursor: pointer;
   position: relative;
   top: 0;
   padding: 10px;
-  max-width: 45%;
   color: white;
   /* border: 1px solid #0000007a; */
   border-radius: 3px;
@@ -131,5 +133,6 @@ body {
 
 .download {
   display: flex;
+  margin-top: 25px;
 }
 
