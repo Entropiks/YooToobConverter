@@ -7,6 +7,9 @@ function App() {
   const [videoId, setVideoId] = useState('');
   const [readyUrl, setReadyUrl] = useState('');
 
+  // We want to handle the input for paste and suggestions
+  // This function will set everything to state for the fetch to use
+
   // Handle the input when someone PASTES a link in
   function handleInput(e) {
     let value = e.clipboardData.getData('Text');
@@ -16,8 +19,10 @@ function App() {
     console.log("Full Url: " + value);
   }
 
-  // console.log("Video ID: " + videoId);
-  // console.log('https://www.yt-download.org/api/button/mp3/' + videoId);
+  function onBlurHandler(e) {
+    setUrl(e.target.value);
+    console.log(url);
+  }
 
   function fetchHtml() {
     fetch('https://www.yt-download.org/api/button/mp3/' + videoId)
@@ -35,13 +40,16 @@ function App() {
     window.location.reload();
   }
 
+  
+  
+
   return (
     
       <div className="wrapper">
         <div className="controls">
           <h1 id="nav"><a href="">Youtube to MP3/MP4 Converter</a></h1>
           <p style={{marginTop: 15, marginBottom: 15}}>Welcome to my video converter, simply paste in a youtube URL and we will give you back a download link! Simple as that. There are also no length limits so go bananas.</p>
-          <input id="youtube-url" onPaste={handleInput} type='text' placeholder="Enter youtube URL"/> 
+          <input id="youtube-url" onBlur={onBlurHandler} onPaste={handleInput} type='text' placeholder="Enter youtube URL"/> 
           <div id="action-bar">
             <button id="btn-convert" onClick={fetchHtml} style={{width: 175}}>Convert to MP3</button> 
             <button id="btn-convert" onClick={handleReset} style={{width: 75}}>Reset</button> 
