@@ -25,12 +25,12 @@
   border: none;
   border-radius: 3px;
   padding: 13px;
-  margin: 15px 0px 10px 0px;
+  margin: 10px 0px 10px 0px;
 }
 
 #action-bar {
   display: flex;
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 #nav a {
@@ -51,17 +51,38 @@
   animation: gradient 5s ease infinite;
   transition: top ease-in-out 0.1s;
 }
-
 .download a:hover {
   background: #00000073;
 	background-size: 400% 400%;
 	animation: gradient 10s ease infinite;
 }
+.btn-format {
+  cursor: pointer;
+  width: 100%;
+  text-decoration: none;
+  padding: 10px;
+  background-color: #0000002b;
+  color: white;
+  border-radius: 3px;
+  border: none;
+  animation: gradient 5s ease infinite;
+  -webkit-transition: background-color 2s ease-out;
+  -moz-transition: background-color 2s ease-out;
+  -o-transition: background-color 2s ease-out;
+  transition: background-color 2s ease-out;
+}
+.btn-format:hover {
+  background: linear-gradient(-45deg, #a5e7e9, #f3b069, #db98fc, #c7f3e9);
+	background-size: 400% 400%;
+}
+
+.active {
+  background: linear-gradient(-45deg, #a5e7e9, #f3b069, #db98fc, #c7f3e9);
+  background-size: 400% 400%;
+}
 
 #youtube-url:focus-within {
   outline: 4px solid linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  /* border: 2px solid linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
-  /* background-size: 400% 400%; */
 }
 
 #disclaimer {
@@ -69,6 +90,7 @@
   font-size: 12px;
   font-weight: 700;
 }
+
 #btn-convert {
   cursor: pointer;
   position: relative;
@@ -84,6 +106,7 @@
   border: none;
   transition: top ease-in-out 0.1s;
 }
+
 #btn-convert:hover {
   top: -2px;
 }
