@@ -6,6 +6,7 @@ function App() {
   const [url, setUrl] = useState('');
   const [videoId, setVideoId] = useState('');
   const [format, setFormat] = useState('mp3');
+  const [active, setActive] = useState(false);
 
   // Handle the input when someone PASTES a link
   function handleInput(e) {
@@ -52,11 +53,11 @@ function App() {
           <h1 id="nav"><a href="">Youtube to MP3/MP4 Converter</a></h1>
           <p style={{marginTop: 15, marginBottom: 15}}>Welcome to my video converter, simply paste in a youtube URL and we will give you back a download link! Simple as that. There are also no length limits so go bananas.</p>
 
-          {/* <p style={{marginBottom: 10}}>Select download format.</p>
-          <section id="format-selection">
-            <button onClick={e => setFormat('mp3')} className="btn-format active" name="mp3" style={{width: 80}}>MP3</button>
-            <button onClick={e => setFormat('videos')} className="btn-format" name="mp4" style={{width: 80, marginLeft: 10, marginRight: 10}}> MP4</button>
-            <button onClick={e => setFormat('merged')} value="" className="btn-format" name="webm/mkv" style={{width: 110}}>WEBM / MKV</button>
+          <p style={{marginBottom: 10}}>Select download format.</p>
+          {/* <section id="format-selection">
+            <button onClick={e => setFormat('mp3') + setActive(true)} className="btn-format active" name="mp3" style={{width: 80}}>MP3</button>
+            <button onClick={e => setFormat('videos') + setActive(true)} className="btn-format" name="mp4" style={{width: 80, marginLeft: 10, marginRight: 10}}> MP4</button>
+            <button onClick={e => setFormat('merged') + setActive(true)} value="" className="btn-format" name="webm/mkv" style={{width: 110}}>WEBM / MKV</button>
           </section> */}
           <input id="youtube-url" onBlur={onBlurHandler} onPaste={handleInput} type='text' placeholder="Enter youtube URL"/> 
           <div id="action-bar">
